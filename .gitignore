@@ -1,0 +1,16 @@
+# Ignore Gradle project-specific cache directory
+
+.idea
+/git_repos
+# Ignore Gradle build output directory
+build
+/target
+/.classpath
+/.project
+/.settings
+/tomcat.*
+/.idea
+/*.iml
+out
+gradle
+.gradle
