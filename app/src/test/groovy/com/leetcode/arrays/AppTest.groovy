@@ -5,15 +5,16 @@ package com.leetcode.arrays
 
 import spock.lang.Specification
 
-class AppTest extends Specification {
-    def "application has a greeting"() {
-        setup:
-        def app = new App()
-
-        when:
-        def result = app.greeting
-
+class RemoveDuplicateSpec extends Specification {
+    RemoveDuplicatesClass removeDuplicatesClass= new RemoveDuplicatesClass();
+    def "should return array with no duplicate"() {
+        given:
+        //def birdArr = ["Parrot", "Cockatiel", "Pigeon"] as String[]
+        def arr=[1,1,2,3,4,4] as int[]
+        when :
+        def result= removeDuplicatesClass.removeDuplicates(arr)
         then:
-        result != null
+        result
+        print result
     }
 }

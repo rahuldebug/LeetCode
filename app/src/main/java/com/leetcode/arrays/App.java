@@ -4,11 +4,12 @@
 package com.leetcode.arrays;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    //public String getGreeting() {
+       // return "Hello World!";
+   // }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+//        int[]arr={1,1,2,3,4,5};
+//        System.out.println(new RemoveDuplicatesClass().removeDuplicates(arr));
     }
 }
