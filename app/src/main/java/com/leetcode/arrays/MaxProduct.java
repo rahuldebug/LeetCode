@@ -26,8 +26,6 @@ public class MaxProduct {
 
         for (int i = 1; i < nums.length; i++) {
             localMin=Math.min(localMin,nums[i]);
-
-
         }
         return 0;
     }
