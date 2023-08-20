@@ -36,4 +36,5 @@ public class RemoveDuplicateLinkedList {
             l1.remove(i);
         }
     }
+
 }
