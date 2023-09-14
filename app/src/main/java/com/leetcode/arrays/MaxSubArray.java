@@ -1,7 +1,8 @@
 package com.leetcode.arrays;
 
 //kadane's algorithm
-public class MaxSubArray {
+public class
+MaxSubArray {
     public int maxSubArray(int[] nums) {
         if (nums.length == 0 || nums == null) return 0;
         int localMax=nums[0];
