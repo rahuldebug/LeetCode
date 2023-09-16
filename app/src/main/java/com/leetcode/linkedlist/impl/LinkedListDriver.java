@@ -10,7 +10,7 @@ public class LinkedListDriver {
         head.next.next.next = new ListNode(40);
         head.next.next.next.next = new ListNode(50);
         DeleteNode deleteNode = new DeleteNode();
-        deleteNode.deleteNode(head.next.next.next);
+        deleteNode.deleteNode(head.next.next.next.next);
         print(head);
 
     }
