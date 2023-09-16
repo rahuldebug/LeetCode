@@ -1,4 +1,6 @@
-package com.leetcode.linkedlist;
+package com.leetcode.linkedlist.impl;
+
+import com.leetcode.linkedlist.impl.ListNode;
 
 public class LinkedListImpl {
     public static void main(String[] args) {

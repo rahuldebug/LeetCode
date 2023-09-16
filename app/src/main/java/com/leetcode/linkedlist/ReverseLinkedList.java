@@ -1,5 +1,7 @@
 package com.leetcode.linkedlist;
 
+import com.leetcode.linkedlist.impl.ListNode;
+
 public class ReverseLinkedList {
     ListNode prev;
     public ListNode reverse(ListNode head){
