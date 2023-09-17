@@ -1,4 +1,4 @@
-package com.leetcode.heapshashmap;
+package com.leetcode.hashmap;
 
 import java.util.HashMap;
 /*Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
