@@ -1,4 +1,4 @@
-package com.leetcode.graph;
+package com.leetcode.matrix;
 
 public class NumberOfIsland {
     public static void main(String[] args) {
