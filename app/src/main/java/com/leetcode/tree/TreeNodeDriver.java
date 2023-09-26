@@ -9,6 +9,8 @@ public class TreeNodeDriver {
         root.right.right = new TreeNode(50);
         //InorderTraversal.inorder(root);
         //PreorderTraversal.preorder(root);
-        PostOrderTraversal.postorder(root);
+        //PostOrderTraversal.postorder(root);
+        //System.out.println(HeightOfBinaryTree.getHeight(root));
+        PrintKdistance.kdistance(root,2);
     }
 }
