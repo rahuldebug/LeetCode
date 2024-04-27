@@ -29,6 +29,7 @@ public class StackUsingArray {
         }
 
         int pop() {
+
             int result=-1;
             if(!isEmpty()){
                 result= arr[top];
