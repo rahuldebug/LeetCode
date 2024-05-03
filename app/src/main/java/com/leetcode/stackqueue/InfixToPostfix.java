@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 public class InfixToPostfix {
     public static void main(String[] args) {
         String str = "a + b";
-        System.out.println(infixToPostfix(str));
+        //System.out.println(infixToPostfix(str));
     }
     public static String infixToPostfix(String infixExpression) {
         //You can code here
