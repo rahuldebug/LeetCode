@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 
 public class InfixToPostfix {
     public static void main(String[] args) {
-        String str = "a + b - d";
+        String str = "a + b - d * e";
         System.out.println(infixToPostfix(str));
     }
     public static String infixToPostfix(String infixExpression) {
@@ -50,9 +50,13 @@ public class InfixToPostfix {
         switch (str){
             case ("^"):
                 return 3;
-            case ("*"), ("/"):
+            case  ("/"):
                 return 2;
-            case ("+"), ("-"):
+            case  ("*"):
+                return 2;
+            case ("-"):
+                return 1;
+            case ("+"):
                 return 1;
 
         }
