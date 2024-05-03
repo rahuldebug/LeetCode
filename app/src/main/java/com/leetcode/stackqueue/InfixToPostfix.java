@@ -6,8 +6,8 @@ import java.util.ArrayDeque;
 
 public class InfixToPostfix {
     public static void main(String[] args) {
-        String str = "a + b";
-        //System.out.println(infixToPostfix(str));
+        String str = "a + b - d";
+        System.out.println(infixToPostfix(str));
     }
     public static String infixToPostfix(String infixExpression) {
         //You can code here
@@ -26,8 +26,8 @@ public class InfixToPostfix {
                 stack.pop();
             }
             if (checkSymbol(token)){
-                while (true){
-                    assert stack.peek() != null;
+                while (stack.peek()!=null){
+                  //  assert stack.peek() != null;
                     if (!(precedence(token)<=precedence(stack.peek()))) break;
                     result.append(stack.pop()).append(" ");
                 }
@@ -38,7 +38,9 @@ public class InfixToPostfix {
             }
 
         }
-
+        while (!stack.isEmpty()){
+            result.append(stack.pop()).append(" ");
+        }
         return result.toString();
     }
     private static boolean checkSymbol(String str) {
