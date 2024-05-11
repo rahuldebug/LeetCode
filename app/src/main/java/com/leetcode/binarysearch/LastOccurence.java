@@ -3,8 +3,8 @@ package com.leetcode.binarysearch;
 public class LastOccurence {
     public static void main(String[] args) {
         int[]arr= {1,2,2,3,4,8,8,8};
-        LastOccurence lastOccurence= new LastOccurence();
-        System.out.println(lastOccurence.lastOccurence(arr,8));
+        //LastOccurence lastOccurence= new LastOccurence();
+        System.out.println(LastOccurence.lastOccurence(arr,8));
     }
     public static int lastOccurence(int arr[], int k) {
         //You can code here
