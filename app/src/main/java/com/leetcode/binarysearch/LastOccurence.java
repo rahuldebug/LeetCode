@@ -6,7 +6,7 @@ public class LastOccurence {
         LastOccurence lastOccurence= new LastOccurence();
         System.out.println(lastOccurence.lastOccurence(arr,8));
     }
-    int lastOccurence(int arr[], int k) {
+    public static int lastOccurence(int arr[], int k) {
         //You can code here
         int l = 0;
         int r = arr.length - 1;
