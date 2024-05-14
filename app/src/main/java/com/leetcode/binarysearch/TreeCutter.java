@@ -11,6 +11,7 @@ Since Geek is an environmentalist, he doesn't want to cut woods more than necess
 Find the maximum height H of the blade that still allows to cutoff at least M meters of wood.*/
 public class TreeCutter {
     public static void main(String[] args) {
+
         int A[] = {47, 40, 21, 43, 33, 25, 7, 25, 40, 29, 16, 11, 3, 4, 42};
         int M = 25;
         int N = A.length;
