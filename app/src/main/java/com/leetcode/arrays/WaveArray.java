@@ -20,7 +20,7 @@ public class WaveArray {
         int[] arr = {3, 1, 5, 4, 2};
         int[] result = WaveArray.wiggleSort(arr);
         for (int i : result) {
-            System.out.println(i);
+            System.out.print(i);
         }
     }
 
