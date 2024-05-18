@@ -23,6 +23,8 @@ Explanation:
 
 Split into the maximum number of chunks like this: [0], [1], [2], [4, 3]
 and sort the individual chunk to sort the whole array.*/
+
+//similar to jump game
 public class MaxChunks {
     public int maxChunksToSorted(int[] arr) {
         if(arr.length==0)return 0;
