@@ -61,7 +61,7 @@ public class MajorityElement {
             }
 
         }
-        if (temp == (nums.length / 2 + 1)) return maxElement;
+        if (temp >= (nums.length / 2 + 1)) return maxElement;
         else return -1;
     }
 }
