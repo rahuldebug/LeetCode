@@ -3,6 +3,7 @@ package com.leetcode.hashing;
 import java.util.HashSet;
 
 public class LongestConsecutive {
+
     public static void main(String[] args) {
         int A[] = {1, 3, 2, 4, 5, 15, 10};
         LongestConsecutive lc = new LongestConsecutive();
