@@ -1,4 +1,4 @@
-package com.leetcode.arrays;
+package com.leetcode.arrays.twopointer;
 
 public class MoveZeroes {
     public void moveZeroes(int[] nums) {

@@ -1,4 +1,4 @@
-package com.leetcode.arrays;
+package com.leetcode.arrays.twopointer;
 
 public class SwapAllZerosAndOnes {
     public static void main(String[] args) {
