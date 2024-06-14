@@ -1,4 +1,4 @@
-package com.leetcode.arrays;
+package com.leetcode.arrays.twopointer;
 
 /*[2,3,4,5]
 
