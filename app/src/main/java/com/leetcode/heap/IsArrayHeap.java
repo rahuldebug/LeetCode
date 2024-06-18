@@ -11,7 +11,7 @@ public class IsArrayHeap {
             }
 
             // If right child is greater, return false
-            if (2 * i + 2 < n && arr[2 * i + 2] > arr[i]) {
+            if (2L * i + 2 < n && arr[2 * i + 2] > arr[i]) {
                 return false;
             }
         }
