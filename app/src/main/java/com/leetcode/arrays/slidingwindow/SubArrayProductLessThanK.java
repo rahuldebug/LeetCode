@@ -1,5 +1,7 @@
 package com.leetcode.arrays.slidingwindow;
-
+/*subarray product less than k
+sliding window
+leetcode 713*/
 public class SubArrayProductLessThanK {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         if(k <= 1) return 0;
