@@ -14,9 +14,15 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 **/
 
 /** solution
-Brute force approach
+ Basically you can sell stock once for the maximum profit
+
+Brute force approach ::
+
 pick the current element on ith position and compare it with rest of the element to find the profit
 save the profit and compare it with global profit
+
+ efficient approach ::
+
 repeat the same for n-1 elements
 Time complexity == n^2
 keep evaluating the minimum and compare the current price and store it using math.max

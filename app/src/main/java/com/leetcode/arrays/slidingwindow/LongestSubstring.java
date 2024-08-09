@@ -4,11 +4,11 @@ import java.util.HashSet;
 
 public class LongestSubstring {
     public static void main(String[] args) {
-        var result=findSubsting("kyckyckkabcd");
+        var result= findSubstring("kyckyckkabcd");
         System.out.println(result);
     }
 
-    private static String findSubsting(String s) {
+    private static String findSubstring(String s) {
 
         String result = "";
         String finalResult = "";
@@ -17,7 +17,7 @@ public class LongestSubstring {
         var arr = s.toCharArray();
         HashSet<Character> set = new HashSet<>();
 
-        for (rptr = 0; rptr < arr.length; rptr++) {
+        for (rptr =0; rptr < arr.length; rptr++) {
             if (!set.contains(arr[rptr])) {
                 result += arr[rptr];
                 set.add(arr[rptr]);
