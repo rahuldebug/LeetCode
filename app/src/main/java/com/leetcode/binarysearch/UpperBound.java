@@ -2,7 +2,7 @@ package com.leetcode.binarysearch;
 
 public class UpperBound {
     public static int findCeil(long arr[], int n, long x) {
-        int result = -1;
+        int result = arr.length;
         int l = 0;
         int r = n - 1;
         while (l <= r) {

@@ -1,6 +1,10 @@
 package com.leetcode.binarysearch;
 
 public class SearchInSortedRotatedArray {
+    public static void main(String[] args) {
+        SearchInSortedRotatedArray searchInSortedRotatedArray= new SearchInSortedRotatedArray();
+        System.out.println(searchInSortedRotatedArray.search(new int[]{3,1} ,1));
+    }
     public int search(int[] nums, int target) {
         int l=0, r=nums.length-1;
         int ans=-1;
