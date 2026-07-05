@@ -1,16 +1,21 @@
-# Ignore Gradle project-specific cache directory
-
+# IDE
 .idea
-/git_repos
-# Ignore Gradle build output directory
-build
-/target
-/.classpath
-/.project
-/.settings
-/tomcat.*
-/.idea
-/*.iml
+.vscode
+*.iml
+.classpath
+.project
+.settings
 out
-gradle
+bin
+
+# Gradle
 .gradle
+/build
+/app/build
+/app/bin
+!gradle/wrapper/gradle-wrapper.jar
+
+# Misc
+/git_repos
+/target
+/tomcat.*
