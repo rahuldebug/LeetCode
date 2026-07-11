@@ -1,5 +1,8 @@
 package com.leetcode.recursion;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Factorial {
     public static void main(String[] args) {
        System.out.println(Factorial.tail(5));
@@ -29,4 +32,5 @@ public class Factorial {
         if (n == 0 || n == 1) return acc;
         return tail(n - 1, acc * n);
     }
+
 }
