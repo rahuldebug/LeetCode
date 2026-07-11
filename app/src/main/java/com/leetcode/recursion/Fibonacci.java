@@ -9,11 +9,10 @@ import java.util.Map;
 //
 public class Fibonacci {
     public static void main(String[] args) {
-        System.out.println(Fibonacci.naive(10));
+        System.out.println(Fibonacci.memo(10));
     }
     
-    // 1. Naive recursion: brute force
-    public static long naive(int n) {
+      public static long naive(int n) {
         if (n==0|| n==1) return n;
         int a=0;
         int b=1;
@@ -36,6 +35,7 @@ public class Fibonacci {
         if (cache.containsKey(n)) return cache.get(n);
         if (n == 0 || n == 1) return n;
         long result = memoHelper(n - 1, cache) + memoHelper(n - 2, cache);
+        System.out.println("nth term "+ n +" value " + result);
         cache.put(n, result);
         return result;
     }
