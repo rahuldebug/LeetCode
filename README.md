@@ -1,12 +1,10 @@
 # LeetCode
 
-A personal collection of 130+ data structure & algorithm problems solved in Java, organized by topic and built with Gradle. Some solutions are backed by [Spock](https://spockframework.org/) tests.
+A personal collection of 130+ data structure & algorithm problems solved in Java, organized by topic. No build tool — just plain `.java` files.
 
 ## Requirements
 
 - JDK 21 ([Temurin](https://adoptium.net/) recommended)
-
-No local Gradle install is needed — this repo ships the Gradle Wrapper, which downloads the correct Gradle version automatically on first run.
 
 ## Getting started
 
@@ -14,21 +12,20 @@ No local Gradle install is needed — this repo ships the Gradle Wrapper, which 
 git clone https://github.com/rahuldebug/LeetCode.git
 cd LeetCode
 
-# Compile everything
-./gradlew build
+# Compile a single solution (and anything it depends on in the same package)
+javac -d app/bin/main app/src/main/java/com/leetcode/<topic>/<Solution>.java
 
-# Run the test suite
-./gradlew test
+# Run it (if it has a main method)
+java -cp app/bin/main com.leetcode.<topic>.<Solution>
 ```
 
-There's no single CLI entry point — each solution is a standalone class under `app/src/main/java`. Open the class you want in your IDE and run its `main` method (where present), or add a quick Spock spec under `app/src/test/groovy` to exercise it.
+There's no single CLI entry point — each solution is a standalone class under `app/src/main/java`. Open the class you want in your IDE (VSCode's Java extension picks up `app/src/main/java` automatically) and run its `main` method where present.
 
 ## Project layout
 
 ```
 app/
-├── src/main/java/com/leetcode/   # solutions, grouped by topic
-└── src/test/groovy/com/leetcode/ # Spock specs
+└── src/main/java/com/leetcode/   # solutions, grouped by topic
 ```
 
 | Package | Topic |
@@ -50,4 +47,3 @@ app/
 
 1. Drop a new class into the matching topic package under `app/src/main/java/com/leetcode/<topic>/`.
 2. Name it after the problem (e.g. `MaxSubArray.java`), and note the LeetCode problem number in a comment or in the commit message.
-3. Optionally add a Spock spec under `app/src/test/groovy/com/leetcode/<topic>/` and run `./gradlew test`.

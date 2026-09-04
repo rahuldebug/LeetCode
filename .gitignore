@@ -8,12 +8,10 @@
 out
 bin
 
-# Gradle
-.gradle
+# Build output
 /build
 /app/build
 /app/bin
-!gradle/wrapper/gradle-wrapper.jar
 
 # Misc
 /git_repos
