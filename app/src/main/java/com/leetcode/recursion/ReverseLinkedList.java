@@ -47,6 +47,6 @@ public class ReverseLinkedList {
         // — this replaces the loop's prev = head; head = next;
         return reverseRecursive(next, curr);
     }
-
+//will redo this 
 
 }
