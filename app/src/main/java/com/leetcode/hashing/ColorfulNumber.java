@@ -1,7 +1,5 @@
 package com.leetcode.hashing;
 
-import org.checkerframework.checker.units.qual.C;
-
 import java.util.HashSet;
 
 public class ColorfulNumber {
