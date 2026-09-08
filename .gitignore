@@ -12,6 +12,7 @@ bin
 /build
 /app/build
 /app/bin
+/app/.gradle
 
 # Misc
 /git_repos
