@@ -1,0 +1,199 @@
+# Josephus Problem
+
+> n people stand in a circle. Counting starts at person 1; every k-th person is
+> eliminated. Counting resumes from the next survivor. Who is the last one standing?
+
+Worked example throughout: **n = 5, k = 2**.
+
+---
+
+## 1. Simulating it by hand
+
+Positions are fixed seats around a circle. `X` marks an eliminated seat.
+
+**Start — everyone alive, counting begins at 1**
+
+```
+              1
+           ·     ·
+        5           2
+         ·         ·
+          4 ───── 3
+```
+
+**Round 1** — count `1 → 2`, so **2 dies**. Next count starts at 3.
+
+```
+              1
+           ·     ·
+        5           X
+         ·         ·
+          4 ───── 3
+```
+
+**Round 2** — count `3 → 4`, so **4 dies**. Next count starts at 5.
+
+```
+              1
+           ·     ·
+        5           X
+         ·         ·
+          X ───── 3
+```
+
+**Round 3** — count `5 → 1` (wrapping past the dead seats), so **1 dies**.
+Next count starts at 3.
+
+```
+              X
+           ·     ·
+        5           X
+         ·         ·
+          X ───── 3
+```
+
+**Round 4** — count `3 → 5`, so **5 dies**.
+
+```
+              X
+           ·     ·
+        X           X
+         ·         ·
+          X ─────(3)
+```
+
+**Survivor: person 3.**
+
+---
+
+## 2. The recursive insight
+
+Simulating is O(n·k) and teaches you nothing reusable. The recursive view is:
+
+> After the first elimination, what remains **is the same problem with n−1 people** —
+> just with everyone sitting in different seats.
+
+So: solve the smaller circle, then translate the answer back to the original seating.
+
+### The relabeling
+
+The first victim is at index `k−1` (0-indexed). Counting then restarts at index `k`,
+so **the person at old index `k` becomes new index 0**:
+
+```
+original circle (n = 5), 0-indexed seats:
+
+   old idx:    0       1       2       3       4
+   person:     1       2       3       4       5
+                       ↑
+                   killed first (index k−1 = 1)
+
+counting restarts at old index 2, which becomes new index 0:
+
+   new idx:    3       ·       0       1       2
+   old idx:    0       1       2       3       4
+               ↑               ↑
+          wraps around     new start
+
+renumbered circle (n = 4):
+
+   new idx:    0       1       2       3
+   person:     3       4       5       1
+```
+
+Read the mapping off the table:
+
+| new index | 0 | 1 | 2 | 3 |
+|-----------|---|---|---|---|
+| old index | 2 | 3 | 4 | 0 |
+
+Every old index is the new index plus `k`, wrapping at `n`:
+
+```
+old = (new + k) mod n
+```
+
+The `mod` handles the wrap: new 3 → 3 + 2 = 5 → `5 mod 5 = 0`.
+
+### The recurrence
+
+```
+J(1) = 0                      // one person left: the survivor sits at index 0
+J(n) = (J(n-1) + k) mod n     // translate the smaller circle's answer back
+```
+
+`J(n)` is **0-indexed**. Add 1 for a 1-indexed answer.
+
+---
+
+## 3. Trace
+
+```
+J(1) = 0
+J(2) = (0 + 2) % 2 = 0
+J(3) = (0 + 2) % 3 = 2
+J(4) = (2 + 2) % 4 = 0
+J(5) = (0 + 2) % 5 = 2
+```
+
+0-indexed survivor is seat 2 → **person 3**, matching the hand simulation above.
+
+---
+
+## 4. Code
+
+### Recursive
+
+```java
+/** 0-indexed position of the survivor. */
+static int josephus(int n, int k) {
+    if (n == 1) return 0;
+    return (josephus(n - 1, k) + k) % n;
+}
+
+/** 1-indexed answer, as most problem statements expect. */
+static int josephusPosition(int n, int k) {
+    return josephus(n, k) + 1;
+}
+```
+
+### Iterative
+
+The recursion is a straight chain with no branching, so it unrolls into a loop:
+
+```java
+static int josephusPosition(int n, int k) {
+    int ans = 0;                                  // J(1) = 0
+    for (int i = 2; i <= n; i++) {
+        ans = (ans + k) % i;                      // J(i) from J(i-1)
+    }
+    return ans + 1;
+}
+```
+
+---
+
+## 5. Complexity
+
+| Version    | Time | Space |
+|------------|------|-------|
+| Simulation | O(n·k) | O(n) |
+| Recursive  | O(n) | O(n) stack |
+| Iterative  | O(n) | O(1) |
+
+**No memoization needed.** Only one parameter changes (`n`), each value is computed
+exactly once, and there is no branching — so there are no repeated subproblems to cache.
+Contrast with Fibonacci or nCr, where two recursive calls create overlapping subtrees.
+
+---
+
+## 6. Notes / gotchas
+
+- **Indexing.** The recurrence is 0-indexed; problem statements usually are not.
+  Convert once, at the boundary — don't try to make the recurrence itself 1-indexed.
+- **`k = 1`** eliminates everyone in order, so the last person survives:
+  `J(n) = n − 1` (0-indexed). A good sanity check for the implementation.
+- **Why `+ k` and not `+ (k−1)`?** The victim is at index `k−1`, but counting resumes
+  at the *next* seat, index `k`. That seat becomes new index 0, so the shift is `k`.
+- The recursion depth is `n`, so very large `n` will overflow the stack — use the
+  iterative form in production.
