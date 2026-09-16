@@ -2,6 +2,7 @@ package com.leetcode.recursion;
 
 import java.util.HashMap;
 import java.util.Map;
+//quite simple won't do again
 
 public class Factorial {
     public static void main(String[] args) {
